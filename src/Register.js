@@ -57,7 +57,7 @@ function Register() {
     const register = () => {
 
         if (validateform()) {
-            Axios.post("https://otptest-1.herokuapp.com/otp/register", {username: username, email: email, password: password, phonenum: phonenum}).then((response) => {
+            Axios.post("http://otptest-1.herokuapp.com/otp/register", {username: username, email: email, password: password, phonenum: phonenum}).then((response) => {
                 if (response.data.exist) {
                     setErrmsg(response.data.message);
                 } else {
