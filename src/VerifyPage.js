@@ -11,7 +11,7 @@ function VerifyPage() {
   
 
     const otpreq = () => {
-        axios.post("https://otptest-1.herokuapp.com/otp/sendotp", {phonenum: phonenum}).then((response) => {
+        axios.get("https://otptest-1.herokuapp.com/otp/sendotp", {phonenum: phonenum}).then((response) => {
             console.log(response)
             localStorage.setItem("phonenum", phonenum)
             history.push('/Otp');
