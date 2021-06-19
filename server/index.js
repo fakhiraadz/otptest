@@ -8,7 +8,7 @@ app.use(express.json());
 const userRoute = require('./routes/Otp');
 app.use('/otp', userRoute);
 
-app.listen(4040, (req, res) => {
-    console.log('Listening to port 4040')
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
