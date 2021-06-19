@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'build')))
 const userRoute = require('./routes/Otp');
 app.use('/otp', userRoute);
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 80;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
