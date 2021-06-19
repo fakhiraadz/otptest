@@ -80,4 +80,14 @@ router.post('/register', (req, res) => {
 
 });
 
+router.get("/viewuser", (req, res) => {
+    db.query("SELECT * FROM user", (err, results) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(results)
+        }
+    })
+})
+
 module.exports = router;
