@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const path = require('path')
 
 var corsOptions = {
     'origin': '*',
@@ -12,6 +13,8 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'build')))
 
 const userRoute = require('./routes/Otp');
 app.use('/otp', userRoute);
