@@ -9,9 +9,9 @@ function Otpverify() {
     let history = useHistory();
 
     const otpver = () => {
-        axios.post("http://localhost:4040/otp/verify", {otpcode: otpcode, phonenum: localStorage.getItem("phonenum")}).then((response) => {
+        axios.post("https://otptest-1.herokuapp.com/otp/verify", { otpcode: otpcode, phonenum: localStorage.getItem("phonenum") }).then((response) => {
             console.log(response)
-            
+
 
             if (response.data.status == "success") {
                 setErrmsg(response.data.message);
@@ -31,9 +31,9 @@ function Otpverify() {
             </div>
             <div className="otp-input">
                 <input required type="text" name="otpcode" id="otpcode" placeholder="Enter OTP code"
-                onChange={(e) => {
-                    setOtpcode(e.target.value);
-                }}
+                    onChange={(e) => {
+                        setOtpcode(e.target.value);
+                    }}
                 />
             </div>
 
@@ -44,7 +44,7 @@ function Otpverify() {
             <div className="errmsg">
                 {errmsg}
             </div>
-            </div>
+        </div>
     )
 }
 
