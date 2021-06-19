@@ -9,7 +9,7 @@ function Otpverify() {
     let history = useHistory();
 
     const otpver = () => {
-        axios.post("http://otptest-1.herokuapp.com/otp/verify", { otpcode: otpcode, phonenum: localStorage.getItem("phonenum") }).then((response) => {
+        axios.post("https://otptest-1.herokuapp.com/otp/verify", { otpcode: otpcode, phonenum: localStorage.getItem("phonenum") }).then((response) => {
             console.log(response)
 
 
