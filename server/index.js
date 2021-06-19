@@ -3,8 +3,9 @@ const app = express();
 const cors = require('cors');
 
 var corsOptions = {
-    origin: 'https://otptest-1.herokuapp.com/',
-    methods: ['POST', 'GET', 'PATCH', 'DELETE', 'OPTIONS'],
+    'origin': '*',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false,
     allowedHeaders: ['Content-Type', 'Authorization'],
     optionsSuccessStatus: 200 // For legacy browser support
 }
