@@ -2,7 +2,13 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-app.use(cors());
+
+var corsOptions = {
+    origin: 'https://otptest-1.herokuapp.com/',
+    optionsSuccessStatus: 200 // For legacy browser support
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const userRoute = require('./routes/Otp');

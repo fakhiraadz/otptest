@@ -5,7 +5,7 @@ const conf = require("../config/conf")
 const db = require('../config/db');
 const client = require("twilio")(conf.accountSID, conf.authToken)
 
-router.post('/sendotp', cors(), (req, res) => {
+router.post('/sendotp', (req, res) => {
 
     const phonenum = req.body.phonenum
 
